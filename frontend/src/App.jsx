@@ -6,6 +6,8 @@ import AdminDashboard from "./pages/AdminDashboard"
 import StudentDashboard from "./pages/StudentDashboard"
 import ProtectedRoute from "./components/ProtectedRoute"
 import Header from "./components/Header"
+import CoSoPage from "./pages/CoSoPage"
+import KhoaPage from "./pages/KhoaPage"
 
 function App() {
   return (
@@ -33,6 +35,18 @@ function App() {
             <StudentDashboard />
           </ProtectedRoute>
         } />
+
+        <Route path="/admin/coso" element={
+          <ProtectedRoute allowedRoles={["ADMIN"]}>
+            <CoSoPage />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/admin/khoa" element={
+          <ProtectedRoute allowedRoles={["ADMIN"]}>
+            <KhoaPage />
+          </ProtectedRoute>
+          } />
       </Routes>
     </div>
   )

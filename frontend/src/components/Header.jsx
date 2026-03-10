@@ -21,6 +21,8 @@ export default function Header() {
           <>
             <Link to="/admin/dashboard">🏠 Dashboard</Link>
             <Link to="/admin/add-student">👤 Thêm SV</Link>
+            <Link to="/admin/coso">🏫 Cơ sở</Link>
+            <Link to="/admin/khoa">🎓 Khoa</Link>
           </>
         )}
         {role === 'STUDENT' && (
