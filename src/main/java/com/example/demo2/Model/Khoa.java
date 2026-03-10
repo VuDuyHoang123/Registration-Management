@@ -11,20 +11,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "Khoa")
+@Table(name = "KHOA")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Khoa {
 
     @Id
-    @Column(name = "MaKhoa", length = 20)
+    @Column(name = "MAKHOA", length = 20)
     private String maKhoa;
 
-    @Column(name = "TenKhoa", length = 100, nullable = false)
+    @Column(name = "TENKHOA", length = 100, nullable = false)
     private String tenKhoa;
 
     @ManyToOne
-    @JoinColumn(name = "MaCoSo")
+    @JoinColumn(name = "MA_CO_SO")   // phải đúng tên cột trong DB
     private CoSo coSo;
 }
