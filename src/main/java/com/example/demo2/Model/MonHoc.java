@@ -27,7 +27,5 @@ public class MonHoc {
     @Column(name = "SoTinChi", nullable = false)
     private Integer soTinChi;
 
-    @ManyToOne
-    @JoinColumn(name = "MonTienQuyet")
-    private MonHoc monTienQuyet;
+ 
 }

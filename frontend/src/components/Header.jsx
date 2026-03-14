@@ -23,6 +23,9 @@ export default function Header() {
             <Link to="/admin/add-student">👤 Thêm SV</Link>
             <Link to="/admin/coso">🏫 Cơ sở</Link>
             <Link to="/admin/khoa">🎓 Khoa</Link>
+            <Link to="/admin/giangvien">👨‍🏫 Giảng viên</Link>
+            <Link to="/admin/monhoc">📚 Môn học</Link>
+            <Link to="/admin/lophp">📚 Lớp học phần</Link>
           </>
         )}
         {role === 'STUDENT' && (

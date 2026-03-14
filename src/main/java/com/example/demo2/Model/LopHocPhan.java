@@ -24,8 +24,6 @@ public class LopHocPhan {
     @Column(name = "TenLop", length = 100)
     private String tenLop;
 
-    @Column(name = "GiangVien", length = 100)
-    private String giangVien;
 
     @Column(name = "SiSoToiDa", nullable = false)
     private Integer siSoToiDa;
@@ -40,4 +38,8 @@ public class LopHocPhan {
     @ManyToOne
     @JoinColumn(name = "MaKhoa")
     private Khoa khoa;
+
+    @ManyToOne
+    @JoinColumn(name = "MaGiangVien")
+    private GiangVien giangVien;
 }

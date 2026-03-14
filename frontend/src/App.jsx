@@ -8,6 +8,9 @@ import ProtectedRoute from "./components/ProtectedRoute"
 import Header from "./components/Header"
 import CoSoPage from "./pages/CoSoPage"
 import KhoaPage from "./pages/KhoaPage"
+import GiangVienPage from "./pages/GiangVienPage"
+import MonHocPage from "./pages/MonHocPage"
+import LopHocPhanPage from "./pages/LopHocPhanPage"
 
 function App() {
   return (
@@ -47,7 +50,29 @@ function App() {
             <KhoaPage />
           </ProtectedRoute>
           } />
+
+        <Route path="/admin/giangvien" element={
+          <ProtectedRoute allowedRoles={["ADMIN"]}>
+            <GiangVienPage/>
+          </ProtectedRoute>
+        } />
+
+        <Route path="/admin/monhoc" element={
+          <ProtectedRoute allowedRoles={["ADMIN"]}>
+            <MonHocPage/>
+          </ProtectedRoute>
+        } />
+        <Route
+            path="/admin/lophp"
+            element={
+              <ProtectedRoute allowedRoles={["ADMIN"]}>
+                <LopHocPhanPage />
+              </ProtectedRoute>
+            }
+          />
+
       </Routes>
+
     </div>
   )
 }
