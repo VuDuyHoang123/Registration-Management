@@ -23,11 +23,7 @@ public class ViewLichHoc {
     @Column(name = "TEN_GIANG_VIEN")
     private String tenGiangVien;
 
-    @Column(name = "SI_SO_DADK")
-    private Integer siSoDaDK;
-
-    @Column(name = "SI_SO_TOI_DA")
-    private Integer siSoToiDa;
+    
 
     private Integer thu;
     private Integer tietBatDau;

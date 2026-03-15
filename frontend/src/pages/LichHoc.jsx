@@ -151,7 +151,6 @@ onChange={(e)=>setForm({...form,soTiet:e.target.value})}
 <th>Tên lớp</th>
 <th>Môn học</th>
 <th>Giảng viên</th>
-<th>Sĩ số</th>
 <th>Thứ</th>
 <th>Tiết</th>
 <th>Phòng</th>
@@ -170,7 +169,6 @@ onChange={(e)=>setForm({...form,soTiet:e.target.value})}
 <td>{item.tenLop}</td>
 <td>{item.tenMon}</td>
 <td>{item.tenGiangVien}</td>
-<td>{item.siSoDaDK}/{item.siSoToiDa}</td>
 <td>{item.thu}</td>
 <td>{item.tietBatDau}</td>
 <td>{item.phongHoc}</td>

@@ -30,7 +30,11 @@ export default function Header() {
           </>
         )}
         {role === 'STUDENT' && (
-          <Link to="/student/dashboard">🏠 Dashboard</Link>
+          <>
+            <Link to="/student/dashboard">🏠 Dashboard</Link>
+            <Link to="/student/register">📚 Đăng ký học phần</Link>
+            <Link to="/student/lophocphanstudent">📚 Lớp học phần</Link>
+          </>
         )}
       </nav>
 

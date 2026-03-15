@@ -12,6 +12,8 @@ import GiangVienPage from "./pages/GiangVienPage"
 import MonHocPage from "./pages/MonHocPage"
 import LopHocPhanPage from "./pages/LopHocPhanPage"
 import LichHoc from "./pages/LichHoc"
+import StudentRegisterPage from "./pages/StudentRegisterPage"
+import LopHocPhanPageStudent from "./pages/LopHocPhanPageStudent"
 
 function App() {
   return (
@@ -79,6 +81,29 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          <Route
+            path="/student/register"
+            element={
+              <ProtectedRoute allowedRoles={["STUDENT"]}>
+              <StudentRegisterPage/>
+              </ProtectedRoute>
+              }
+          />
+
+          <Route
+            path="/student/lophocphanstudent"
+            element={
+              <ProtectedRoute allowedRoles={["STUDENT"]}>
+              <LopHocPhanPageStudent/>
+              </ProtectedRoute>
+              }
+          />
+
+
+          
+
+
 
         
 
