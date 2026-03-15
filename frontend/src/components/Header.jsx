@@ -26,6 +26,7 @@ export default function Header() {
             <Link to="/admin/giangvien">👨‍🏫 Giảng viên</Link>
             <Link to="/admin/monhoc">📚 Môn học</Link>
             <Link to="/admin/lophp">📚 Lớp học phần</Link>
+            <Link to="/admin/lichhoc">📅 Lịch học</Link>
           </>
         )}
         {role === 'STUDENT' && (

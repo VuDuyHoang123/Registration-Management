@@ -11,6 +11,7 @@ import KhoaPage from "./pages/KhoaPage"
 import GiangVienPage from "./pages/GiangVienPage"
 import MonHocPage from "./pages/MonHocPage"
 import LopHocPhanPage from "./pages/LopHocPhanPage"
+import LichHoc from "./pages/LichHoc"
 
 function App() {
   return (
@@ -70,6 +71,17 @@ function App() {
               </ProtectedRoute>
             }
           />
+        <Route
+            path="/admin/lichhoc"
+            element={
+              <ProtectedRoute allowedRoles={["ADMIN"]}>
+                <LichHoc />
+              </ProtectedRoute>
+            }
+          />
+
+        
+
 
       </Routes>
 

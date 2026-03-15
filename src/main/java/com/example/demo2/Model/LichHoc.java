@@ -1,34 +1,31 @@
 package com.example.demo2.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MapsId;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "LichHoc")
+@Table(name = "LICH_HOC")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class LichHoc {
 
-    @EmbeddedId
-    private LichHocId id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private Long id;
 
     @ManyToOne
-    @MapsId("maLopHP")
-    @JoinColumn(name = "MaLopHP")
+    @JoinColumn(name = "MA_LOPHP")
     private LopHocPhan lopHocPhan;
 
-    @Column(name = "SoTiet")
+    @Column(name = "THU")
+    private Integer thu;
+
+    @Column(name = "TIET_BAT_DAU")
+    private Integer tietBatDau;
+
+    @Column(name = "SO_TIET")
     private Integer soTiet;
 
-    @Column(name = "PhongHoc", length = 50)
+    @Column(name = "PHONG_HOC")
     private String phongHoc;
 }
