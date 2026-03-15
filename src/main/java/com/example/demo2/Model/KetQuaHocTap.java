@@ -2,13 +2,7 @@ package com.example.demo2.Model;
 
 import java.math.BigDecimal;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MapsId;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,16 +14,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class KetQuaHocTap {
 
-    @EmbeddedId
-    private KetQuaId id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "MaKQ")
+    private Long maKQ;
 
     @ManyToOne
-    @MapsId("maSV")
     @JoinColumn(name = "MaSV")
     private SinhVien sinhVien;
 
     @ManyToOne
-    @MapsId("maLopHP")
     @JoinColumn(name = "MaLopHP")
     private LopHocPhan lopHocPhan;
 
