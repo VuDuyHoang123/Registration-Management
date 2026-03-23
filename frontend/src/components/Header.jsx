@@ -27,6 +27,7 @@ export default function Header() {
             <Link to="/admin/monhoc">📚 Môn học</Link>
             <Link to="/admin/lophp">📚 Lớp học phần</Link>
             <Link to="/admin/lichhoc">📅 Lịch học</Link>
+            <Link to="/admin/nhapdiem">📝 Nhập điểm</Link>
           </>
         )}
         {role === 'STUDENT' && (
@@ -36,6 +37,7 @@ export default function Header() {
             <Link to="/student/timetable">📅 Thời khóa biểu</Link>
             <Link to="/student/grades">📝 Xem điểm</Link>
             <Link to="/student/lophocphanstudent">📚 Lớp học phần</Link>
+            <Link to="/student/ketqua">📚 xem diem xếp hạng</Link>
           </>
         )}
       </nav>

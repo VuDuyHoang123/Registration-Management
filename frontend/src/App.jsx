@@ -16,6 +16,8 @@ import StudentRegisterPage from "./pages/StudentRegisterPage"
 import LopHocPhanPageStudent from "./pages/LopHocPhanPageStudent"
 import StudentTimetable from "./pages/StudentTimetable"
 import StudentGrades from "./pages/StudentGrades"
+import KetQuaPage from "./pages/KetQuaPage"
+import NhapDiemPage from "./pages/NhapDiemPage"
 
 function App() {
   return (
@@ -120,6 +122,26 @@ function App() {
               }
           />
 
+
+         <Route
+          path="/student/ketqua"
+          element={
+            <ProtectedRoute allowedRoles={["STUDENT"]}>
+              <KetQuaPage/>
+            </ProtectedRoute>
+          }
+        />
+
+
+
+        <Route
+            path="/admin/nhapdiem"
+            element={
+              <ProtectedRoute allowedRoles={["ADMIN"]}>
+                <NhapDiemPage/>
+              </ProtectedRoute>
+            }
+        />
 
           
 
