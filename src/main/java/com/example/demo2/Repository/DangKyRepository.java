@@ -29,4 +29,7 @@ public interface DangKyRepository extends JpaRepository<DangKy, Long> {
     """)
     List<Object[]> getDangKyBySinhVien(@Param("maSV") String maSV);
 
+    // lấy danh sách đăng ký theo mã lớp học phần
+    List<DangKy> findByLopHocPhan_MaLopHP(String maLopHP);
+
 }

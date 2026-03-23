@@ -14,6 +14,8 @@ import LopHocPhanPage from "./pages/LopHocPhanPage"
 import LichHoc from "./pages/LichHoc"
 import StudentRegisterPage from "./pages/StudentRegisterPage"
 import LopHocPhanPageStudent from "./pages/LopHocPhanPageStudent"
+import StudentTimetable from "./pages/StudentTimetable"
+import StudentGrades from "./pages/StudentGrades"
 
 function App() {
   return (
@@ -90,6 +92,24 @@ function App() {
               </ProtectedRoute>
               }
           />
+
+            <Route
+              path="/student/timetable"
+              element={
+                <ProtectedRoute allowedRoles={["STUDENT"]}>
+                  <StudentTimetable />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/student/grades"
+              element={
+                <ProtectedRoute allowedRoles={["STUDENT"]}>
+                  <StudentGrades />
+                </ProtectedRoute>
+              }
+            />
 
           <Route
             path="/student/lophocphanstudent"

@@ -96,7 +96,7 @@ return(
 <th>Lớp</th>
 <th>Môn</th>
 <th>Giảng viên</th>
-<th>Thứ</th>
+<th>Ngày</th>
 <th>Tiết</th>
 <th>Phòng</th>
 <th></th>
@@ -118,7 +118,7 @@ return(
 <td>{item.tenLop}</td>
 <td>{item.tenMon}</td>
 <td>{item.tenGiangVien}</td>
-<td>{item.thu}</td>
+<td>{item.ngay}</td>
 <td>{item.tietBatDau}</td>
 <td>{item.phongHoc}</td>
 
@@ -153,38 +153,49 @@ return(
 
 <h2>Các lớp đã đăng ký</h2>
 
-<table border="1">
+{/* Build a map of registered classId -> registrationId so we can cancel by id */}
+{(() => {
+	const dkMap = {}
+	dangKyList.forEach(d => {
+		// API returns [maDK, maLopHP]
+		if (Array.isArray(d) && d.length >= 2) dkMap[d[1]] = d[0]
+	})
 
-<thead>
-<tr>
-<th>Mã đăng ký</th>
-<th>Mã lớp</th>
-<th>Hủy đăng ký</th>
-</tr>
-</thead>
+	const registeredClasses = lichHoc.filter(item => dkMap[item.maLopHP])
 
-<tbody>
-
-{dangKyList.map((dk,index)=>(
-
-<tr key={index}>
-
-<td>{dk[0]}</td>
-<td>{dk[1]}</td>
-
-<td>
-<button onClick={()=>handleHuy(dk[0])}>
-Hủy đăng ký
-</button>
-</td>
-
-</tr>
-
-))}
-
-</tbody>
-
-</table>
+	return (
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Lớp</th>
+					<th>Môn</th>
+					<th>Giảng viên</th>
+					<th>Ngày</th>
+					<th>Tiết</th>
+					<th>Phòng</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{registeredClasses.map(item => (
+					<tr key={item.id}>
+						<td>{item.tenLop}</td>
+						<td>{item.tenMon}</td>
+						<td>{item.tenGiangVien}</td>
+						<td>{item.ngay}</td>
+						<td>{item.tietBatDau}</td>
+						<td>{item.phongHoc}</td>
+						<td>
+							<button onClick={() => handleHuy(dkMap[item.maLopHP])}>
+								Hủy đăng ký
+							</button>
+						</td>
+					</tr>
+				))}
+			</tbody>
+		</table>
+	)
+})()}
 
 </div>
 

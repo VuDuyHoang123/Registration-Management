@@ -33,6 +33,8 @@ export default function Header() {
           <>
             <Link to="/student/dashboard">🏠 Dashboard</Link>
             <Link to="/student/register">📚 Đăng ký học phần</Link>
+            <Link to="/student/timetable">📅 Thời khóa biểu</Link>
+            <Link to="/student/grades">📝 Xem điểm</Link>
             <Link to="/student/lophocphanstudent">📚 Lớp học phần</Link>
           </>
         )}
